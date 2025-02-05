@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCM OPC Business Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Logo Section -->
+            <div class="logo">
+                <img src="images/ocmlogo.png" alt="Logo" class="logo-img">
+            </div>
+    
+            <!-- Navigation Section -->
+            <nav class="nav">
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#quote">Request a Quote</a></li>
+                    <!-- <li><a href="#countries">Countries we Serve</a></li>
+                    <li><a href="#industries">Areas of Service</a></li> -->
+                    <li><a href="#personnel">Key Personnel</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <h1>OCM Customs Brokerage, OPC</h1>
+        <p>Your Trusted Partner in Brokerage Solutions.</p>
+    </header>
+    
+    <main>
+        <button id="scrollToTop" onclick="scrollToTop()">↑</button>
+
+        <section id="services">
+            <h2>OUR SERVICES</h2>
+            <ul>
+                <li>
+                    <img src="images/air and sea.jpg" alt="Service 1 Image" class="service-image">
+                    <p>Customs Clearance Air and Sea (Import/Export)</p>
+                    <a href="company.html" target="_blank" class="learn-more">Learn More</a>
+                </li>
+                <li>
+                    <img src="images/documents.avif" alt="Service 2 Image" class="service-image">
+                    <p>Import/Export Documentation and Processing </p> 
+                    <a href="company.html" target="_blank" class="learn-more">Learn More</a>
+                </li>
+                <li>
+                    <img src="images/accreditation.webp" alt="Service 3 Image" class="service-image">
+                    <p>Processing of AMO-BOC Accreditation</p>
+                    <a href="company.html" target="_blank" class="learn-more">Learn More</a>
+                </li>
+                <li>
+                    <img src="images/breakbulk.avif" alt="Service 4 Image" class="service-image">
+                    <p>Breakbulk Releasing</p>
+                    <a href="company.html" target="_blank" class="learn-more">Learn More</a>
+                </li>
+                <li>
+                    <img src="images/special.avif" alt="Service 5 Image" class="service-image">
+                    <p>Special Project Cargo</p>
+                    <a href="company.html" target="_blank" class="learn-more">Learn More</a>
+                </li>
+            </ul>
+        
+            <!-- Button at the bottom center -->
+            <div class="services-button-container">
+                <a href="#contact" class="services-button">Get Started</a>
+            </div>
+        </section>               
+
+        <section id="about">
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="images/about us.webp" alt="About Us">
+                </div>
+                <div class="about-content">
+                    <h2>OUR COMPANY</h2>
+                    <p>OCM CUSTOMS BROKERAGE, OPC is a duly licensed customs brokerage approved by Security Exchange Commission to conduct business.
+                        <br> Our first priority is always to meet or exceed our customer's needs and expectations. We take the initiative to ensure that our customer's logistics plan
+                        work out as intended and we further take initiative to find creative solutions and improvements to all logistical issues.
+                    </p>
+                    <a href="company.html" target="_blank" class="learn-more">Learn more about the company</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="quote">
+            <h2>REQUEST A QUOTE</h2>
+            <p>Let us know how we can help you with your shipment. Simply enter the following details to request a quotation, and we promise to get back to you within 24 hours.</p>
+            <form action="send_quote.php" method="POST" id="quote-form">
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-row">
+                    <input type="number" name="number" placeholder="Phone Number" required>
+                    <input type="text" name="telnum" placeholder="Telephone Number (OPTIONAL)">
+                </div>
+                <div class="form-row">
+                    <input type="text" name="ship_from" placeholder="Ship From" required>
+                    <input type="text" name="ship_to" placeholder="Ship To" required>
+                </div>
+                <div class="form-row">
+                    <input type="number" name="cubic_meter" placeholder="Est. Cubic Meter" required>
+                    <input type="number" name="kilograms" placeholder="Est. Kilograms" required>
+                </div>
+                <div class="form-row">
+                    <input type="number" name="value_usd" placeholder="Est. Value in USD" required>
+                </div>
+                <textarea name="description" placeholder="Specific Description of Items (e.g., Electronics, Clothing, etc.)" rows="4" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>    
+        
+        <script>
+            document.getElementById("quote-form").addEventListener("submit", function(e) {
+                e.preventDefault();
+        
+                // Disable the submit button and prevent clicking
+                var submitButton = document.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.style.pointerEvents = 'none'; // Disable click events
+        
+                // Show a loading notification before submitting the form
+                $.notify("Submitting your request...", "info");
+        
+                // Use the fetch API to submit the form data via POST
+                var formData = new FormData(this);
+        
+                fetch("send_quote.php", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(data => {
+                    // Display a success or error notification based on the response
+                    if (data.includes("Thank you")) {
+                        $.notify(data, "success");
+                        
+                        // Clear the form after successful submission
+                        document.getElementById("quote-form").reset(); // Reset the form fields
+                    } else {
+                        $.notify("Sorry, there was an issue sending your quote request. Please try again.", "error");
+                    }
+                })
+                .catch(error => {
+                    $.notify("There was an error submitting the form.", "error");
+                })
+                .finally(() => {
+                    // Enable the submit button and allow clicks again after the request is completed
+                    submitButton.disabled = false;
+                    submitButton.style.pointerEvents = 'auto'; // Re-enable click events
+                });
+            });
+        </script>
+
+        <!-- <section id="countries">
+            <h2>OUR GLOBAL PRESENCE</h2>
+            <p>
+            </p>
+        </section> -->
+
+        <!-- <section id="industries">
+            <h2>AREAS OF SERVICE</h2>
+            <p>
+            </p>
+        </section> -->
+        
+        <section id="personnel">
+            <h2>OUR KEY PERSONNEL</h2>
+            <p>Meet the professionals behind our success.</p>
+        
+            <div class="personnel-grid">
+                <div class="personnel-item">
+                    <h3><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> MARIE GRACE O. SO <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h3>
+                    <p>PRESIDENT <BR>LICENSED CUSTOM BROKER</BR></p>
+                </div>
+                <div class="personnel-item">
+                    <h3><i class="fas fa-star"></i><i class="fas fa-star"></i> MENELAO A. CALZADA <i class="fas fa-star"></i><i class="fas fa-star"></i></h3>
+                    <p>TREASURER</p>
+                </div>
+                <div class="personnel-item">
+                    <h3><i class="fas fa-star"></i> DANIEL BOUSTROS L. CALZADA <i class="fas fa-star"></i></h3>
+                    <p>CORPORATE SECRETARY</p>
+                </div>
+                <div class="personnel-item">
+                    <h3><i class="fas fa-handshake"></i> SHIN ANN RELANO <i class="fas fa-handshake"></i></h3>
+                    <p>CUSTOMS DECLARANT <BR>LICENSED CUSTOM BROKER</BR></p>
+                </div>
+                <div class="personnel-item">
+                    <h3><i class="fas fa-ship"></i> MARGIE P. DEBUTON <i class="fas fa-ship"></i></h3>
+                    <p>IMPORT OFFICER</p>
+                </div>
+                <div class="personnel-item">
+                    <h3><i class="fas fa-file-invoice"></i> CRIZELLE GUERRA <i class="fas fa-file-invoice"></i></h3>
+                    <p>DOCUMENTATION OFFICER</BR></p>
+                </div>
+                <div class="personnel-item">
+                    <h3><i class="fas fa-user-tie"></i> ROMEO L. KABILING <i class="fas fa-user-tie"></i></h3>
+                    <p>LIASON OFFICER</p>
+                </div>
+                <div class="personnel-item">
+                    <h3><i class="fas fa-user-tie"></i> MANUEL PADRIAGA JR. <i class="fas fa-user-tie"></i></h3>
+                    <p>LIASON OFFICER</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>CONTACT US</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p><strong>OFFICE ADDRESS:</strong></p>
+                    <p>12-14 2/F Bldg 1, Olivarez Condominium, Junanita De Leon St., Brgy. San Dionisio, Paranaque City 1700 Philippines</p>
+                    <p><strong>EMAIL:</strong> <a href="mailto:ocmcustomsbrokerage0722@gmail.com">ocmcustomsbrokerage0722@gmail.com</a></p>
+                    <p><strong>TEL. NOS.:</strong> (632) 8 470 8450 | 7 000 2989</p>
+                </div>
+                <div class="contact-map">
+                    <iframe 
+                    src="https://www.google.com/maps/embed/v1/place?q=12-14+2/F+Bldg+1,+Olivarez+Condominium,+Junanita+De+Leon+St.,+Brgy.+San+Dionisio,+Paranaque+City+1700+Philippines&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+                        width="140%" height="300" 
+                        style="border:0;" 
+                        allowfullscreen="" loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <p>&copy; 2022 Reliable Brand OPC. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+<script>
+    document.querySelectorAll('.nav a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopButton = document.getElementById("scrollToTop");
+    const header = document.querySelector("header");
+
+    // Show or hide button based on scroll position
+    function toggleButtonVisibility() {
+        if (window.scrollY > header.offsetHeight) {
+            scrollToTopButton.classList.add("show"); // Show button when scrolling down
+        } else {
+            scrollToTopButton.classList.remove("show"); // Hide button when at top
+        }
+    }
+
+    // Smooth scroll to top when button is clicked
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Attach click event
+    scrollToTopButton.addEventListener("click", scrollToTop);
+
+    // Run toggle function on scroll
+    window.addEventListener("scroll", toggleButtonVisibility);
+});
+
+
+</script>
+
+</html>

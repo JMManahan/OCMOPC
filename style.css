@@ -1,0 +1,702 @@
+/* General Styles */
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Base font size for responsive scaling */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+#scrollToTop {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2e2e2e;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+    z-index: 9999;
+}
+
+#scrollToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#scrollToTop:hover {
+    background-color: #02223a;
+}
+
+
+
+/* Header Styles */
+header {
+    background: url('images/ocmpage.png') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 20px 100px; /* Responsive padding based on viewport width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100vh; /* Full screen height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Optional: Add a dark overlay for better text visibility */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+    z-index: 0;
+}
+
+
+/* Ensure header content is above the overlay */
+.header-container, h1, p {
+    position: relative;
+    z-index: 1;
+}
+
+/* Logo Styling */
+.logo-img {
+    max-width: 115px; /* Adjust size of the logo */
+}
+
+/* Navigation Bar Styles */
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 3px; /* Space between buttons */
+}
+
+.nav li {
+    display: inline;
+}
+
+.nav a {
+    position: relative; /* Allows the pseudo-element to be positioned */
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav a::after {
+    content: ""; 
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0%; /* Initially invisible */
+    height: 1px; /* Line thickness */
+    background: white; /* Line color */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%; /* Full width on hover */
+    left: 0; /* Align to left */
+}
+
+/* Align header content */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Main Section Styles */
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Section Styles */
+section {
+    height: 100%; /* Full screen height for each section */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: white;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+section p,
+section ul {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    max-width: 1500px;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+}
+
+section ul li {
+    background: #f4f4f9;
+    margin: 10px 0;
+    padding: 15px;
+    border-left: 5px solid #0078d4;
+}
+
+/* Contact Section Email and Phone */
+section a {
+    color: #0078d4;
+    text-decoration: none;
+}
+
+section a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+}
+
+section#services{
+    padding: 4vw 2vw;
+    background-color: #ebebeb;
+}
+
+/* Services Section Styles */
+section#services ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between boxes */
+    justify-content: center; /* Center the boxes */
+    list-style: none;
+}
+
+section#services ul li {
+    background: #ededf1;
+    border: 2px solid #b5dbf8;
+    color: #333;
+    width: 240px;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    padding: 10px;
+}
+
+section#services ul li img {
+    width: 110%;
+    height: 150px;
+    object-fit: cover;
+    margin-top: -5%;
+}
+
+section#services ul li p {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+section#services ul li a.learn-more {
+    color: #2e2e2e;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px 20px;
+    /* border: 2px solid #0078d4;
+    border-radius: 5px; */
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+section#services ul li a.learn-more:hover {
+    text-decoration: underline;
+}
+
+/* Hover Effect */
+section#services ul li:hover {
+    background: #d7dfe6;
+    color: rgb(0, 0, 0);
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Services Section Responsiveness */
+@media (max-width: 1024px) {
+    section#services {
+        height: 100%;
+    }
+
+    section#services ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    section#services ul li {
+        width: 45%;
+        height: auto;
+        padding: 15px;
+    }
+}
+
+/* Style for the button container */
+.services-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px; /* Space from the services list */
+}
+
+/* Style for the button */
+.services-button {
+    background-color: #02223a; /* Button color */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.services-button:hover {
+    background-color: #283847; /* Darker color on hover */
+    text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+    section#services ul li {
+        width: 100%;
+        height: auto;
+        margin: 10px 0;
+        padding: 15px;
+    }
+}
+
+/* About Section Styles */
+section#about {
+    background-color: #ffffff;
+    padding: 10vw 2vw; /* Responsive padding */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+    border-bottom: 1px solid #ddd;
+}
+
+section#about .about-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    gap: 30px;
+}
+
+section#about .about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section#about .about-content {
+    max-width: 600px;
+}
+
+section#about .about-content h2 {
+    font-size: 2rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+section#about .about-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 550;
+}
+
+section#about .about-content a.learn-more {
+    color: #02223a;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: 2px solid #02223a;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+section#about .about-content a.learn-more:hover {
+    background-color: #283847;
+    color: #ffffff;
+}
+
+/* About Section Responsiveness */
+
+@media (max-width: 1024px) {
+
+    section#about {
+            height: 100%;
+        }
+
+    section#about .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    section#about .about-image img {
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    section#about .about-content h2 {
+        font-size: 1.8rem;
+    }
+
+    section#about .about-content p {
+        font-size: 1rem;
+    }
+}
+
+/* Quote Section Styles */
+section#quote {
+    height: 100%;
+    background-color: #ededf1;
+    padding: 5vw 2vw; /* Responsive padding based on viewport width */
+    text-align: center;
+}
+
+section#quote h2 {
+    font-size: 2.2rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+section#quote p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+    margin-left: 200px;
+    margin-right: 200px;
+    font-weight: 550;
+}
+
+section#quote form {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+section#quote form .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Inputs and Textarea */
+section#quote form .form-row input,
+section#quote form textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Button Style */
+section#quote form button {
+    background-color: #02223a;
+    color: white;
+    font-size: 1rem;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+section#quote form button:hover {
+    background-color: #283847;
+}
+
+/* Quote Section Responsiveness */
+@media (max-width: 768px) {
+
+        section#quote {
+            height: 100%;
+        }
+
+    section#quote form .form-row {
+        flex-direction: column;
+    }
+
+    section#quote form .form-row input {
+        width: 100%;
+    }
+}
+
+/* Tablets and Smaller Devices */
+@media (max-width: 1024px) {
+    section#quote p {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    section#quote form .form-row {
+        flex-direction: column;
+    }
+
+    section#quote form .form-row input,
+    section#quote form textarea {
+        width: 100%; /* Make form inputs take full width */
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+    section#quote h2 {
+        font-size: 1.8rem; /* Slightly smaller heading on smaller screens */
+    }
+
+    section#quote p {
+        font-size: 1rem; /* Adjust text size */
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    section#quote form {
+        padding: 2vw; /* Reduce form padding for smaller screens */
+    }
+
+    section#quote form .form-row input,
+    section#quote form textarea {
+        padding: 12px; /* Adjust padding for better spacing */
+        font-size: 0.9rem; /* Smaller font size on mobile */
+    }
+
+    section#quote form button {
+        font-size: 1.1rem; /* Slightly larger button text for easier clicking */
+        padding: 12px;
+    }
+}
+
+
+/* Personnel Section Styles */
+#personnel {
+    background-color: #ffffff;
+    padding: 4vw 2vw; /* Responsive padding */
+    text-align: center;
+}
+
+#personnel h2 {
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+#personnel p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: 550;
+}
+
+/* Grid Layout for Personnel */
+.personnel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Create responsive grid */
+    gap: 50px;
+    justify-items: center;
+    padding: 0;
+}
+
+.personnel-item {
+    background-color: #f4f4f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px 0px;
+    text-align: center;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.personnel-item h3 {
+    font-size: 1.8rem;
+    color: #4030ca;
+    margin-bottom: 10px;
+}
+
+.personnel-item p {
+    font-size: 1.1rem;
+    color: #777;
+    font-weight: 600;
+}
+
+/* Hover Effect */
+.personnel-item:hover {
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+i.fa-star {
+    color: rgb(224, 191, 2);
+    font-size: 30px;
+}
+
+i.fa-handshake {
+    color: rgb(1, 184, 41);
+    font-size: 35px;
+}
+
+i.fa-ship {
+    color: rgb(1, 117, 184);
+    font-size: 35px;
+}
+
+i.fa-file-invoice {
+    color: rgb(184, 74, 1);
+    font-size: 35px;
+}
+
+i.fa-user-tie {
+    color: rgb(13, 11, 133);
+    font-size: 35px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .personnel-item {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    #personnel h2 {
+        font-size: 2rem;
+    }
+
+    .personnel-item h3 {
+        font-size: 1.5rem;
+    }
+
+    .personnel-item p {
+        font-size: 1rem;
+    }
+}
+
+
+section#contact{
+    height: 100%;
+    background-color: #ededf1;
+    padding: 5vw 2vw; /* Responsive padding based on viewport width */
+    text-align: left;
+}
+
+#contact h2{
+    margin-bottom: 100px;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.contact-info {
+    flex: 1;
+    max-width: 800px;
+    font-size: 1.1rem;
+}
+
+.contact-map {
+    flex: 1;
+    max-width: 500px;
+
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-map {
+        width: 100%;
+        max-width: none;
+    }
+}
+
