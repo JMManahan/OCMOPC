@@ -55,7 +55,7 @@ header {
     background: url('images/ocmpage.png') no-repeat center center/cover;
     color: white;
     text-align: center;
-    padding: 20px 100px; /* Responsive padding based on viewport width */
+    padding: 10px 50px; /* Reduce padding for small screens */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     height: 100vh; /* Full screen height */
     display: flex;
@@ -65,41 +65,40 @@ header {
     position: relative;
 }
 
-/* Optional: Add a dark overlay for better text visibility */
-header::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust transparency */
-    z-index: 0;
+
+/* Responsive Font Sizes */
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem; /* Default for large screens */
+    font-weight: 700;
+    margin: 0;
+    color: white; /* White font color */
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Adds spacing for a modern look */
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
 }
 
+/* Responsive Subtext */
+header p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: white; /* White text */
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Soft glow effect */
+}
 
-/* Ensure header content is above the overlay */
-.header-container, h1, p {
+.nav {
     position: relative;
-    z-index: 1;
-}
-
-/* Logo Styling */
-.logo-img {
-    max-width: 115px; /* Adjust size of the logo */
 }
 
 /* Navigation Bar Styles */
 .nav ul {
     list-style: none;
-    margin: 0;
     padding: 0;
     display: flex;
-    gap: 3px; /* Space between buttons */
-}
-
-.nav li {
-    display: inline;
+    gap: 15px;
 }
 
 .nav a {
@@ -128,22 +127,208 @@ header::before {
     left: 0; /* Align to left */
 }
 
+/* Hide Hamburger & Toggle Button by Default */
+.menu-toggle,
+.menu-toggle-icons {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        min-height: 100vh; /* Make header take full screen height */
+        display: flex; /* Center content vertically */
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+    }
+
+    
+
+/* Hamburger Menu Button */
+.menu-toggle {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: white;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1100; /* Highest to stay in front */
+}
+
+/* Hamburger Icon Style */
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: rgb(24, 150, 170);
+    margin: 6px auto;
+    transition: 0.4s;
+    border-radius: 3px;
+}
+
+/* Menu Open Animation */
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Style the toggle button */
+.menu-toggle-icons {
+    display: block;
+    background: rgb(24, 150, 170);
+    color: white;
+    border: none;
+    padding: 5px;
+    margin: 10px auto;
+    cursor: pointer;
+    text-align: center;
+    width: 90%;
+    border-radius: 5px;
+}
+
+.menu-toggle-icons:hover {
+    background: rgb(24, 150, 170);
+}
+
+/* Default: Show both icons and text */
+.nav ul li a i {
+    margin-right: 8px;
+    display: inline-block; /* Show icons */
+}
+
+/* Icons only mode */
+.nav.icons-only ul li a span {
+    display: none; /* Hide text */
+}
+
+.nav.icons-only ul li a i {
+    margin-right: 0; /* Center icon */
+    font-size: 1.5rem;
+    display: inline-block; /* Icons visible */
+}
+.nav ul li a span {
+    display: none; /* Hide text */
+}
+.nav.text-only ul li a i {
+    display: none;
+}
+.nav.text-only ul li a span {
+    display: inline-block;
+}
+.nav.icons-only ul li a span {
+    display: none;
+}
+
+/* Navigation Menu */
+.nav {
+    position: fixed;
+    top: 60px; /* Below the button */
+    right: 20px;
+    width: 100px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0; /* Hide initially */
+    transform: scale(0.9);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 1000; /* Keep menu in front */
+}
+
+/* Show menu smoothly */
+.nav.open {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Menu Items - Smaller */
+.nav ul {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.nav ul li {
+    text-align: center;
+    padding: 8px;
+}
+
+.nav ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 1rem; /* Smaller size */
+    display: block;
+    padding: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav ul li a:hover {
+    background-color: rgb(24, 150, 170);
+    border-radius: 5px;
+    padding: 6px;
+    width: 70px;
+}
+
+}
+
+
+/* Optional: Add a dark overlay for better text visibility */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust transparency */
+    z-index: 0;
+}
+
+
+/* Ensure header content is above the overlay */
+.header-container, h1, p {
+    position: relative;
+}
+
+/* Logo Styling */
+.logo-img {
+    max-width: 115px; /* Adjust size of the logo */
+}
+
+.nav li {
+    display: inline;
+}
+
 /* Align header content */
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-}
-
-header h1 {
-    font-size: 4rem;
-    margin: 0;
-}
-
-header p {
-    font-size: 1.5rem;
-    margin-top: 10px;
 }
 
 /* Main Section Styles */
@@ -198,6 +383,39 @@ section a {
     color: #0078d4;
     text-decoration: none;
 }
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-info {
+        max-width: 90%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    #contact h2 {
+        font-size: 2rem;
+    }
+
+    .contact-info {
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    .contact-map {
+        height: 300px;
+        max-width: 100%;
+    }
+}
+
 
 section a:hover {
     text-decoration: underline;
@@ -687,16 +905,18 @@ section#contact{
 
 }
 
+.contact-map iframe {
+    width: 100%;  /* Makes it responsive */
+    max-width: 140%; /* Matches the 140% width from your iframe */
+    height: 300px; /* Fixed height */
+    border: 0;
+}
+
 @media (max-width: 768px) {
     .contact-container {
         flex-direction: column;
         align-items: center;
         text-align: center;
-    }
-
-    .contact-map {
-        width: 100%;
-        max-width: none;
     }
 }
 

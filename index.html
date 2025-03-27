@@ -8,6 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -18,17 +19,26 @@
             </div>
     
             <!-- Navigation Section -->
+            <button class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Toggle Button -->
+          
             <nav class="nav">
+                <button class="menu-toggle-icons">🔘 Texts</button>
                 <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#quote">Request a Quote</a></li>
-                    <!-- <li><a href="#countries">Countries we Serve</a></li>
-                    <li><a href="#industries">Areas of Service</a></li> -->
-                    <li><a href="#personnel">Key Personnel</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#services"><i class="fas fa-tools"></i> <span>Services</span></a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> <span>About</span></a></li>
+                    <li><a href="#quote"><i class="fas fa-file-signature"></i> <span>Quote</span></a></li>
+                    <li><a href="#personnel"><i class="fas fa-users"></i> <span>Team</span></a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
                 </ul>
             </nav>
+            
+            
         </div>
         <h1>OCM Customs Brokerage, OPC</h1>
         <p>Your Trusted Partner in Brokerage Solutions.</p>
@@ -99,7 +109,7 @@
                 </div>
                 <div class="form-row">
                     <input type="number" name="number" placeholder="Phone Number" required>
-                    <input type="text" name="telnum" placeholder="Telephone Number (OPTIONAL)">
+                    <input type="text" name="telnum" placeholder="Telephone Number">
                 </div>
                 <div class="form-row">
                     <input type="text" name="ship_from" placeholder="Ship From" required>
@@ -223,7 +233,6 @@
                 <div class="contact-map">
                     <iframe 
                     src="https://www.google.com/maps/embed/v1/place?q=12-14+2/F+Bldg+1,+Olivarez+Condominium,+Junanita+De+Leon+St.,+Brgy.+San+Dionisio,+Paranaque+City+1700+Philippines&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
-                        width="140%" height="300" 
                         style="border:0;" 
                         allowfullscreen="" loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade">
@@ -234,7 +243,7 @@
         
     </main>
     <footer>
-        <p>&copy; 2022 Reliable Brand OPC. All rights reserved.</p>
+        <p>&copy; 2022 OCM Customs Brokerage, OPC. All rights reserved.</p>
     </footer>
     <script src="script.js"></script>
 </body>
@@ -273,6 +282,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Run toggle function on scroll
     window.addEventListener("scroll", toggleButtonVisibility);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav");
+    const toggleIconsBtn = document.querySelector(".menu-toggle-icons");
+
+    // Default menu state when opened (Icons Only)
+    nav.classList.add("icons-only");
+
+    menuToggle.addEventListener("click", function() {
+        nav.classList.toggle("open"); // Show menu
+    });
+
+    toggleIconsBtn.addEventListener("click", function() {
+        if (nav.classList.contains("icons-only")) {
+            nav.classList.remove("icons-only");
+            nav.classList.add("text-only");
+            toggleIconsBtn.textContent = "🔘 Icons";
+        } else {
+            nav.classList.remove("text-only");
+            nav.classList.add("icons-only");
+            toggleIconsBtn.textContent = "🔘 Texts";
+        }
+    });
 });
 
 
