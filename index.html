@@ -338,26 +338,6 @@ document.getElementById("quote-form").addEventListener("submit", function(e) {
     spinner.style.display = "flex";
     btn.disabled = true;
 
-    emailjs.sendForm(
-        "service_d7gl37n",
-        "template_6rijfh5",
-        "template_6fdpb6r",
-        this
-    )
-    .then(() => {
-        spinner.style.display = "none";
-        modal.style.display = "flex";
-        this.reset();
-        btn.disabled = false;
-    })
-    .catch((error) => {
-        spinner.style.display = "none";
-        btn.disabled = false;
-        alert("❌ Failed to send. Please try again.");
-        console.error(error);
-    });
-});
-
 function closeModal() {
     document.getElementById("successModal").style.display = "none";
 }
@@ -388,6 +368,9 @@ function showToast(message, type) {
         toast.className = toast.className.replace("show", "");
     }, 4000);
 }
+});
+
+
 
 </script>
 
