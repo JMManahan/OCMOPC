@@ -339,9 +339,8 @@ document.getElementById("quote-form").addEventListener("submit", function(e) {
     btn.disabled = true;
 
     emailjs.sendForm(
-        "service_d7gl37n",
-        "template_6rijfh5",
-        this
+    "service_d7gl37n", "template_6rijfh5", this,
+    "service_d7gl37n", "template_6fdpb6r", this
     )
     .then(() => {
         spinner.style.display = "none";
