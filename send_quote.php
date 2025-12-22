@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -31,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Recipients
         $mail->setFrom('jlmanahan.rbmbopc@gmail.com', 'OCM Website Quote Requests');
-        $mail->addAddress('ocmcustomsbrokerage0722@gmail.com', 'OCM Customs Brokerage, OPC'); // Where emails are sent
+        $mail->addAddress('johnlagman12334@gmail.com', 'OCM Customs Brokerage, OPC'); // Where emails are sent
 
         // Content
         $mail->isHTML(true);
