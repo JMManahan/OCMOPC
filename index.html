@@ -9,6 +9,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){
+    emailjs.init("97tFvmK9w5gPTX9UX"); // <-- replace
+})();
+</script>
+
 </head>
 <body>
     <header>
@@ -102,72 +110,37 @@
         <section id="quote">
             <h2>REQUEST A QUOTE</h2>
             <p>Let us know how we can help you with your shipment. Simply enter the following details to request a quotation, and we promise to get back to you within 24 hours.</p>
-            <form action="send_quote.php" method="POST" id="quote-form">
-                <div class="form-row">
-                    <input type="text" name="name" placeholder="Name" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                </div>
-                <div class="form-row">
-                    <input type="number" name="number" placeholder="Phone Number" required>
-                    <input type="text" name="telnum" placeholder="Telephone Number">
-                </div>
-                <div class="form-row">
-                    <input type="text" name="ship_from" placeholder="Ship From" required>
-                    <input type="text" name="ship_to" placeholder="Ship To" required>
-                </div>
-                <div class="form-row">
-                    <input type="number" name="cubic_meter" placeholder="Est. Cubic Meter" required>
-                    <input type="number" name="kilograms" placeholder="Est. Kilograms" required>
-                </div>
-                <div class="form-row">
-                    <input type="number" name="value_usd" placeholder="Est. Value in USD" required>
-                </div>
-                <textarea name="description" placeholder="Specific Description of Items (e.g., Electronics, Clothing, etc.)" rows="4" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
+<form id="quote-form">
+    <div class="form-row">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+    </div>
+
+    <div class="form-row">
+        <input type="text" name="number" placeholder="Phone Number" required>
+        <input type="text" name="telnum" placeholder="Telephone Number">
+    </div>
+
+    <div class="form-row">
+        <input type="text" name="ship_from" placeholder="Ship From" required>
+        <input type="text" name="ship_to" placeholder="Ship To" required>
+    </div>
+
+    <div class="form-row">
+        <input type="number" name="cubic_meter" placeholder="Est. Cubic Meter" required>
+        <input type="number" name="kilograms" placeholder="Est. Kilograms" required>
+    </div>
+
+    <div class="form-row">
+        <input type="number" name="value_usd" placeholder="Est. Value in USD" required>
+    </div>
+
+    <textarea name="description" placeholder="Specific Description of Items" rows="4" required></textarea>
+
+    <button type="submit" id="submitBtn">Submit</button>
+</form>
+
         </section>    
-        
-        <script>
-            document.getElementById("quote-form").addEventListener("submit", function(e) {
-                e.preventDefault();
-        
-                // Disable the submit button and prevent clicking
-                var submitButton = document.querySelector('button[type="submit"]');
-                submitButton.disabled = true;
-                submitButton.style.pointerEvents = 'none'; // Disable click events
-        
-                // Show a loading notification before submitting the form
-                $.notify("Submitting your request...", "info");
-        
-                // Use the fetch API to submit the form data via POST
-                var formData = new FormData(this);
-        
-                fetch("send_quote.php", {
-                    method: "POST",
-                    body: formData
-                })
-                .then(response => response.text())
-                .then(data => {
-                    // Display a success or error notification based on the response
-                    if (data.includes("Thank you")) {
-                        $.notify(data, "success");
-                        
-                        // Clear the form after successful submission
-                        document.getElementById("quote-form").reset(); // Reset the form fields
-                    } else {
-                        $.notify("Sorry, there was an issue sending your quote request. Please try again.", "error");
-                    }
-                })
-                .catch(error => {
-                    $.notify("There was an error submitting the form.", "error");
-                })
-                .finally(() => {
-                    // Enable the submit button and allow clicks again after the request is completed
-                    submitButton.disabled = false;
-                    submitButton.style.pointerEvents = 'auto'; // Re-enable click events
-                });
-            });
-        </script>
 
         <!-- <section id="countries">
             <h2>OUR GLOBAL PRESENCE</h2>
@@ -320,5 +293,34 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 </script>
+
+<script>
+document.getElementById("quote-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const btn = document.getElementById("submitBtn");
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+
+    emailjs.sendForm(
+        "service_d7gl37n",     // e.g. service_xxxx
+        "template_6rijfh5",    // e.g. template_xxxx
+        this
+    )
+    .then(() => {
+        alert("✅ Quote request sent successfully!");
+        this.reset();
+        btn.disabled = false;
+        btn.textContent = "Submit";
+    })
+    .catch((error) => {
+        alert("❌ Failed to send. Please try again.");
+        console.error(error);
+        btn.disabled = false;
+        btn.textContent = "Submit";
+    });
+});
+</script>
+
 
 </html>
