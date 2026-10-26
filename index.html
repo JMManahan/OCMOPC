@@ -528,7 +528,7 @@ function toast(h,p){$('#tt').textContent=h;$('#tmsg').textContent=p;$('#toast').
 const qf=$('#qf');
 qf.addEventListener('submit',async e=>{e.preventDefault();const f=new FormData(qf),b=qf.querySelector('button[type=submit]'),lab=b.textContent;
  track('Quote request',{service:f.get('service')});
- if(!f.get('access_key')||f.get('access_key').startsWith('e9e1976e-784c-4dcb-ad22-f7d53b07f256')){
+ if(!f.get('access_key')||f.get('access_key').startsWith('YOUR_')){
   const body=`Name: ${f.get('name')}\nCompany: ${f.get('company')||'-'}\nEmail: ${f.get('email')}\nPhone: ${f.get('phone')||'-'}\nShipment type: ${f.get('dir')}\nService: ${f.get('service')}\n\nDetails:\n${f.get('details')||'-'}`;
   location.href=`mailto:johnlagman12334@gmail.com?subject=${encodeURIComponent('Quote request: '+f.get('dir')+' - '+f.get('service'))}&body=${encodeURIComponent(body)}`;
   toast('Almost done','Your email app should open with your request ready to send.');return}
