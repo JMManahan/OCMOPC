@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Customs advisories | OCM Customs Brokerage OPC</title>
+<meta name="description" content="Updates on customs rules, schedules and notices from OCM Customs Brokerage.">
+<link rel="icon" href="images/ocmlogo.png">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem('ocm-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.dataset.theme=t}catch(e){}</script>
+<script defer data-domain="ocmcustomsbrokerage.com.ph" src="https://plausible.io/js/script.js"></script>
+<style>
+:root{--navy:#0B2545;--ink:#0B2545;--paper:#fff;--mist:#EEF3F7;--text:#1B2B3C;--muted:#5A6B7C;--signal:#F2B705;--sea:#13477A}
+:root[data-theme=dark]{--ink:#E6EEF7;--paper:#0F1D30;--mist:#142840;--text:#D3DFEC;--muted:#9FB2C6;color-scheme:dark}
+*{box-sizing:border-box;margin:0}body{font:17px/1.6 'Public Sans',system-ui,sans-serif;background:var(--paper);color:var(--text)}
+header{background:var(--navy);color:#fff;padding:18px 0;border-bottom:8px solid var(--signal)}
+.wrap{width:min(820px,92%);margin:auto}header .wrap{display:flex;justify-content:space-between;align-items:center}
+header a{color:#fff;font-weight:600;text-decoration:none}
+h1{font:800 clamp(2rem,5vw,3rem)/1.1 'Bricolage Grotesque',sans-serif;color:var(--ink);margin:56px 0 10px}
+.lead{color:var(--muted)}main{padding-bottom:80px}
+article{background:var(--mist);border-radius:16px;padding:22px 26px;margin-top:18px;border-left:5px solid var(--signal)}
+article time{font-size:.85rem;color:var(--muted)}article h2{font:700 1.25rem 'Bricolage Grotesque',sans-serif;color:var(--ink);margin:4px 0 6px}
+a.btn{display:inline-block;margin-top:28px;background:var(--sea);color:#fff;padding:12px 24px;border-radius:99px;text-decoration:none;font-weight:600}
+:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+</style></head>
+<body>
+<header><div class="wrap"><a href="index.html">OCM Customs Brokerage</a><a href="index.html#quote">Request a quote</a></div></header>
+<main class="wrap">
+<h1>Customs advisories</h1>
+<p class="lead">Notices and updates that may affect your shipments.</p>
+<div id="list"></div>
+<a class="btn" href="index.html">Back to home</a>
+</main>
+<script>
+/* To add an advisory, copy a line into this list. Newest first.
+   Format: {date:'2026-10-27', title:'Short title', body:'What clients need to know.'} */
+const advisories=[
+];
+const list=document.getElementById('list');
+if(!advisories.length)list.innerHTML='<article><h2>No advisories right now</h2><p>Check back soon, or message us on Viber or WhatsApp with your questions.</p></article>';
+advisories.forEach(a=>{const el=document.createElement('article');const d=new Date(a.date+'T00:00:00').toLocaleDateString('en-PH',{year:'numeric',month:'long',day:'numeric'});
+el.innerHTML=`<time datetime="${a.date}">${d}</time><h2></h2><p></p>`;el.querySelector('h2').textContent=a.title;el.querySelector('p').textContent=a.body;list.appendChild(el)});
+</script>
+</body></html>

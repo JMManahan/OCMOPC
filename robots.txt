@@ -1,5 +1,4 @@
-User-agent: Googlebot
-Disallow:
-
 User-agent: *
-Disallow:
+Allow: /
+
+Sitemap: https://ocmcustomsbrokerage.com.ph/sitemap.xml

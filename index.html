@@ -6,14 +6,30 @@
 <title>OCM Customs Brokerage OPC | Customs clearance in the Philippines</title>
 <meta name="description" content="Licensed customs brokerage in Parañaque City. Air and sea clearance, import/export documentation, AMO-BOC accreditation, breakbulk releasing and special project cargo.">
 <link rel="icon" href="images/ocmlogo.png">
+<link rel="canonical" href="https://ocmcustomsbrokerage.com.ph/">
+<meta name="theme-color" content="#0B2545">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="OCM Customs Brokerage OPC">
+<meta property="og:title" content="OCM Customs Brokerage OPC | Customs clearance in the Philippines">
+<meta property="og:description" content="Licensed customs brokerage in Parañaque City: air and sea clearance, import/export documentation, AMO-BOC accreditation, breakbulk and project cargo.">
+<meta property="og:url" content="https://ocmcustomsbrokerage.com.ph/">
+<meta property="og:image" content="https://ocmcustomsbrokerage.com.ph/images/og-image.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"OCM Customs Brokerage OPC","url":"https://ocmcustomsbrokerage.com.ph/","logo":"https://ocmcustomsbrokerage.com.ph/images/ocmlogo.png","image":"https://ocmcustomsbrokerage.com.ph/images/aboutus.webp","description":"Licensed customs brokerage offering air and sea customs clearance, import/export documentation, AMO-BOC accreditation, breakbulk releasing and special project cargo.","telephone":"+63284708450","email":"ocmcustomsbrokerage0722@gmail.com","address":{"@type":"PostalAddress","streetAddress":"12-14 2/F Bldg 1, Olivarez Condominium, Juanita De Leon St., Brgy. San Dionisio","addressLocality":"Parañaque City","postalCode":"1700","addressCountry":"PH"},"areaServed":"PH"}</script>
+<script>try{var t=localStorage.getItem('ocm-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');document.documentElement.dataset.theme=t}catch(e){}</script>
+<script defer data-domain="ocmcustomsbrokerage.com.ph" src="https://plausible.io/js/script.js"></script>
+<script>window.plausible=window.plausible||function(){(window.plausible.q=window.plausible.q||[]).push(arguments)}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:#0B2545; --sea:#13477A; --mist:#EEF3F7; --paper:#FFFFFF; --stamp:#D2362B; --signal:#F2B705; --line:#D5DEE7; --text:#1B2B3C; --muted:#5A6B7C;
+  --navy:#0B2545; --hdr:rgba(255,255,255,.94); --ink:#0B2545; --sea:#13477A; --mist:#EEF3F7; --paper:#FFFFFF; --stamp:#D2362B; --signal:#F2B705; --line:#D5DEE7; --text:#1B2B3C; --muted:#5A6B7C;
   --display:'Bricolage Grotesque',system-ui,sans-serif; --body:'Public Sans',system-ui,sans-serif;
 }
+:root[data-theme=dark]{--navy:#071428;--ink:#E6EEF7;--paper:#0F1D30;--mist:#142840;--text:#D3DFEC;--muted:#9FB2C6;--line:#2A4361;--sea:#2F78B8;--hdr:rgba(10,22,38,.94);color-scheme:dark}
+:root[data-theme=dark] .btn-dark:hover{background:#3F8FD4}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:76px}
 body{font-family:var(--body);color:var(--text);background:var(--paper);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
@@ -27,16 +43,16 @@ p.lead{color:var(--muted);max-width:60ch;margin-top:14px}
 section{padding:96px 0}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font:600 1rem var(--body);text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .2s,background .2s,color .2s}
 .btn:hover{transform:translateY(-2px)}
-.btn-primary{background:var(--signal);color:var(--ink)}
+.btn-primary{background:var(--signal);color:var(--navy)}
 .btn-primary:hover{background:#ffcb2e}
 .btn-ghost{border-color:rgba(255,255,255,.45);color:#fff}
 .btn-ghost:hover{background:rgba(255,255,255,.1)}
-.btn-dark{background:var(--ink);color:#fff}
-.btn-dark:hover{background:var(--sea)}
+.btn-dark{background:var(--sea);color:#fff}
+.btn-dark:hover{background:var(--navy)}
 
 /* nav */
 header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s}
-header.solid{background:rgba(255,255,255,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+header.solid{background:var(--hdr);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 1.15rem var(--display);color:#fff}
 .brand img{height:40px;width:40px;object-fit:contain;background:#fff;border-radius:10px;padding:3px}
@@ -45,7 +61,7 @@ header.solid .brand{color:var(--ink)}
 .links a{text-decoration:none;font-weight:500;font-size:.97rem;color:#fff;opacity:.92}
 header.solid .links a{color:var(--text)}
 .links a:hover{opacity:1;text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--signal);text-decoration-thickness:2px}
-.links .btn{padding:10px 20px;color:var(--ink)!important;text-decoration:none!important}
+.links .btn{padding:10px 20px;color:var(--navy)!important;text-decoration:none!important}
 .burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;color:#fff}
 header.solid .burger{color:var(--ink)}
 .burger span{display:block;width:24px;height:2px;background:currentColor;margin:6px auto;transition:transform .25s,opacity .25s}
@@ -54,9 +70,9 @@ header.solid .burger{color:var(--ink)}
 .burger[aria-expanded=true] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
 
 /* hero */
-.hero{position:relative;background:var(--ink);color:#fff;padding:150px 0 100px;overflow:hidden}
+.hero{position:relative;background:var(--navy);color:#fff;padding:150px 0 100px;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.045) 0 14px,transparent 14px 30px);mask-image:linear-gradient(100deg,transparent 30%,#000 100%);-webkit-mask-image:linear-gradient(100deg,transparent 30%,#000 100%)}
-.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:repeating-linear-gradient(90deg,var(--signal) 0 40px,var(--ink) 40px 80px)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:repeating-linear-gradient(90deg,var(--signal) 0 40px,var(--navy) 40px 80px)}
 .hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
 .hero h1{color:#fff;font-size:clamp(2.7rem,6.2vw,5rem);font-weight:800}
 .hero p{font-size:1.15rem;color:#C9D6E4;max-width:48ch;margin:22px 0 34px}
@@ -74,7 +90,7 @@ header.solid .burger{color:var(--ink)}
 .dot{flex:none;width:40px;height:40px;border-radius:50%;background:var(--paper);border:3px solid var(--line);display:grid;place-items:center;font:700 .9rem var(--display);transition:all .3s;z-index:1}
 .steps button.done .dot{background:var(--sea);border-color:var(--sea);color:#fff}
 .steps button.on{color:var(--ink)}
-.steps button.on .dot{background:var(--signal);border-color:var(--signal);color:var(--ink);transform:scale(1.12)}
+.steps button.on .dot{background:var(--signal);border-color:var(--signal);color:var(--navy);transform:scale(1.12)}
 .detail{background:var(--mist);border-radius:14px;padding:16px 18px;font-size:.96rem;min-height:92px;border-left:5px solid var(--signal)}
 .detail b{display:block;font-family:var(--display);color:var(--ink);margin-bottom:2px}
 
@@ -84,7 +100,7 @@ header.solid .burger{color:var(--ink)}
 .tabs{display:flex;flex-direction:column;gap:10px}
 .tab{text-align:left;padding:18px 20px;border-radius:14px;border:2px solid transparent;background:var(--paper);cursor:pointer;font:600 1.02rem var(--body);color:var(--text);display:flex;justify-content:space-between;gap:12px;align-items:center;transition:all .2s}
 .tab:hover{border-color:var(--line)}
-.tab[aria-selected=true]{background:var(--ink);color:#fff;transform:translateX(8px)}
+.tab[aria-selected=true]{background:var(--sea);color:#fff;transform:translateX(8px)}
 .tab::after{content:"+";font:700 1.4rem var(--display);color:var(--signal);transition:transform .25s}
 .tab[aria-selected=true]::after{transform:rotate(45deg)}
 .panel{background:var(--paper);border-radius:22px;overflow:hidden;box-shadow:0 20px 40px -24px rgba(11,37,69,.35)}
@@ -105,7 +121,7 @@ header.solid .burger{color:var(--ink)}
 .checks li::before{content:"";flex:none;width:22px;height:22px;margin-top:3px;border-radius:50%;background:var(--sea) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center/70% no-repeat}
 
 /* quote */
-.quote{background:var(--ink);color:#fff;position:relative}
+.quote{background:var(--navy);color:#fff;position:relative}
 .quote h2{color:#fff}
 .quote .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
 .quote p.lead{color:#BFD0E2}
@@ -113,26 +129,26 @@ header.solid .burger{color:var(--ink)}
 form{background:var(--paper);color:var(--text);border-radius:22px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .full{grid-column:1/-1}
 label{display:grid;gap:6px;font-weight:600;font-size:.92rem;color:var(--ink)}
-input,select,textarea{font:400 1rem var(--body);padding:13px 14px;border:2px solid var(--line);border-radius:12px;background:#fff;color:var(--text);width:100%}
+input,select,textarea{font:400 1rem var(--body);padding:13px 14px;border:2px solid var(--line);border-radius:12px;background:var(--paper);color:var(--text);width:100%}
 input:focus,select:focus,textarea:focus{outline:none;border-color:var(--sea);box-shadow:0 0 0 4px rgba(19,71,122,.15)}
 textarea{min-height:110px;resize:vertical}
 .seg{display:flex;gap:10px}
 .seg label{flex:1;position:relative}
 .seg input{position:absolute;opacity:0}
 .seg span{display:block;text-align:center;padding:13px;border:2px solid var(--line);border-radius:12px;cursor:pointer;transition:all .2s}
-.seg input:checked+span{background:var(--ink);border-color:var(--ink);color:#fff}
+.seg input:checked+span{background:var(--sea);border-color:var(--sea);color:#fff}
 .seg input:focus-visible+span{outline:3px solid var(--signal);outline-offset:2px}
 .note{font-size:.85rem;color:var(--muted);font-weight:400}
 
 /* team */
 .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;margin-top:44px}
 .person{background:var(--mist);border-radius:18px;padding:22px;transition:transform .25s,background .25s}
-.person:hover{transform:translateY(-4px);background:#E3ECF4}
-.person.lead-p{grid-column:span 2;background:var(--ink);color:#fff}
+.person:hover{transform:translateY(-4px);background:var(--line)}
+.person.lead-p{grid-column:span 2;background:var(--navy);color:#fff}
 .person.lead-p h3{color:#fff}
 .person.lead-p .role{color:var(--signal)}
 .av{width:54px;height:54px;border-radius:14px;background:var(--sea);color:#fff;display:grid;place-items:center;font:700 1.1rem var(--display);margin-bottom:16px}
-.person.lead-p .av{background:var(--signal);color:var(--ink)}
+.person.lead-p .av{background:var(--signal);color:var(--navy)}
 .person h3{font-size:1.08rem;font-weight:700}
 .role{font-size:.88rem;color:var(--muted);margin-top:4px}
 .tag{display:inline-block;margin-top:10px;font-size:.78rem;font-weight:600;padding:3px 10px;border-radius:99px;background:rgba(242,183,5,.25);color:#7A5A00}
@@ -147,33 +163,78 @@ a.card:hover{transform:translateY(-4px);border-color:var(--signal);box-shadow:0 
 .card p{color:var(--muted);word-break:break-word}
 .card .ic{font-size:1.5rem;margin-bottom:10px}
 
-footer{background:var(--ink);color:#9FB3C8;padding:34px 0;font-size:.92rem}
+footer{background:var(--navy);color:#9FB3C8;padding:34px 0;font-size:.92rem}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 footer a{color:#fff}
 
 .float{position:fixed;right:18px;bottom:18px;z-index:40;display:flex;gap:10px}
 .float a{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--stamp);color:#fff;font-size:1.4rem;text-decoration:none;box-shadow:0 12px 24px -8px rgba(210,54,43,.6);transition:transform .2s}
 .float a:hover{transform:scale(1.08)}
-.top{background:var(--ink)!important;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s}
+.top{background:var(--sea)!important;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s}
 .top.show{opacity:1;pointer-events:auto}
 
 .toast{position:fixed;inset:0;z-index:80;background:rgba(11,37,69,.7);display:none;place-items:center;padding:20px}
 .toast.show{display:grid}
-.toast div{background:#fff;border-radius:22px;padding:34px;max-width:420px;text-align:center}
+.toast div{background:var(--paper);border-radius:22px;padding:34px;max-width:420px;text-align:center}
 .toast h3{font-size:1.5rem;margin-bottom:8px}
 .toast p{color:var(--muted);margin-bottom:20px}
 
 .rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
 .rv.in{opacity:1;transform:none}
 
+.tools{display:flex;gap:8px}
+.tool{background:none;border:1.5px solid currentColor;color:#fff;border-radius:99px;min-width:40px;height:36px;padding:0 10px;font:600 .85rem var(--body);cursor:pointer}
+header.solid .tool{color:var(--text)}
+.ind{background:var(--mist);padding:64px 0}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.chips li{background:var(--paper);border:2px solid var(--line);border-radius:99px;padding:10px 20px;font-weight:600;color:var(--ink)}
+.lbl{display:block;font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
+.chk{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;margin-top:40px;align-items:start}
+.chk-ctl{display:grid;gap:22px}
+.chk-ctl .check{font-weight:500}
+.chk-out{background:var(--mist);border-radius:22px;padding:28px 30px}
+.chk-out h3{font-size:1.4rem;margin-bottom:8px}
+.items{list-style:none;margin:10px 0 16px}
+.items label{display:flex;gap:12px;align-items:flex-start;font-weight:400;padding:11px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.items input{width:20px;height:20px;margin-top:3px;flex:none;accent-color:var(--sea)}
+.items b{display:block;color:var(--ink);font-weight:600}
+.items small{display:block;color:var(--muted);font-size:.9rem}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:.88rem}
+.check input{width:auto;margin-top:5px}
+.faq{max-width:820px;margin-top:36px}
+details{background:var(--mist);border-radius:14px;margin-bottom:10px}
+summary{cursor:pointer;padding:18px 22px;font:600 1.05rem var(--body);color:var(--ink);list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:700 1.4rem var(--display);color:var(--sea);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 22px 20px;color:var(--muted);max-width:68ch}
+.gloss{background:var(--mist)}
+.gl{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:36px}
+.gl div{background:var(--paper);border-radius:16px;padding:20px}
+.gl b{font:700 1.2rem var(--display);color:var(--ink);display:block}
+.gl span{font-size:.82rem;color:var(--muted)}
+.gl p{font-size:.95rem;color:var(--muted);margin-top:8px}
+.map iframe{width:100%;height:340px;border:0;border-radius:18px;margin-top:18px}
+.float{flex-direction:column;align-items:flex-end}
+.float .chat{width:auto;height:46px;border-radius:99px;padding:0 18px;font:600 .95rem var(--body)}
+.float .vb{background:#7360F2}
+.float .wa{background:#1FA855}
+footer .wrap>span a{margin-left:14px}
+@media print{header,footer,.float,.hero,section:not(#checklist),.chk-ctl,.cta-row,.toast{display:none!important}
+:root,:root[data-theme=dark]{--paper:#fff;--ink:#000;--text:#000;--muted:#333;--mist:#fff;--line:#999}
+#checklist{padding:0}.chk{display:block}.rv{opacity:1;transform:none}}
 @media(max-width:900px){
+  .chk{grid-template-columns:1fr}
+  .tools{padding:14px 0;color:#fff}
+  .tool{color:#fff!important}
+  .float .chat{height:42px;padding:0 14px;font-size:.88rem}
   section{padding:70px 0}
   .hero .wrap,.svc,.about,.quote .grid{grid-template-columns:1fr}
   .hero{padding:120px 0 80px}
   .tab[aria-selected=true]{transform:none}
   .person.lead-p{grid-column:auto}
   .burger{display:block}
-  .links{position:fixed;inset:72px 0 auto 0;background:var(--ink);flex-direction:column;align-items:stretch;gap:0;padding:12px 6%  24px;display:none}
+  .links{position:fixed;inset:72px 0 auto 0;background:var(--navy);flex-direction:column;align-items:stretch;gap:0;padding:12px 6%  24px;display:none}
   .links.open{display:flex}
   .links a,header.solid .links a{color:#fff;padding:14px 0;display:block;border-bottom:1px solid rgba(255,255,255,.1)}
   .links .btn{margin-top:14px;text-align:center;justify-content:center;border:0}
@@ -190,11 +251,14 @@ footer a{color:#fff}
     <a class="brand" href="#top"><img src="images/ocmlogo.png" alt="" onerror="this.style.display='none'">OCM Customs Brokerage</a>
     <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="links"><span></span><span></span><span></span></button>
     <ul class="links" id="links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#team">Team</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a class="btn btn-primary" href="#quote">Request a quote</a></li>
+      <li><a href="#services" data-i18n="nav_services">Services</a></li>
+      <li><a href="#about" data-i18n="nav_about">About</a></li>
+      <li><a href="#checklist" data-i18n="nav_docs">Documents</a></li>
+      <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+      <li><a href="#team" data-i18n="nav_team">Team</a></li>
+      <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+      <li class="tools"><button class="tool" id="langbtn" type="button" aria-label="Switch language">TL</button><button class="tool" id="themebtn" type="button" aria-label="Toggle dark mode">🌙</button></li>
+      <li><a class="btn btn-primary" href="#quote" data-i18n="req">Request a quote</a></li>
     </ul>
   </div>
 </header>
@@ -203,12 +267,12 @@ footer a{color:#fff}
 <div class="hero">
   <div class="wrap">
     <div>
-      <span class="badge">Licensed customs brokerage · Parañaque City</span>
-      <h1>Your cargo, cleared with confidence.</h1>
-      <p>OCM handles the paperwork, the Bureau of Customs process and the follow-through, so your shipment moves from port to your door without surprises.</p>
+      <span class="badge" data-i18n="hero_badge">Licensed customs brokerage · Parañaque City</span>
+      <h1 data-i18n="hero_h">Your cargo, cleared with confidence.</h1>
+      <p data-i18n="hero_p">OCM handles the paperwork, the Bureau of Customs process and the follow-through, so your shipment moves from port to your door without surprises.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#quote">Request a quote</a>
-        <a class="btn btn-ghost" href="#services">See our services</a>
+        <a class="btn btn-primary" href="#quote" data-i18n="req">Request a quote</a>
+        <a class="btn btn-ghost" href="#services" data-i18n="hero_cta2">See our services</a>
       </div>
     </div>
     <div class="tracker" aria-labelledby="trk">
@@ -223,8 +287,8 @@ footer a{color:#fff}
 <section class="services" id="services">
   <div class="wrap">
     <div class="rv">
-      <h2>What we handle for you</h2>
-      <p class="lead">Pick a service to see how we can help with your shipment.</p>
+      <h2 data-i18n="svc_h">What we handle for you</h2>
+      <p class="lead" data-i18n="svc_p">Pick a service to see how we can help with your shipment.</p>
     </div>
     <div class="svc rv">
       <div class="tabs" role="tablist" aria-label="Services" id="tabs"></div>
@@ -240,14 +304,37 @@ footer a{color:#fff}
       <div class="stamp">Licensed &amp; SEC registered</div>
     </div>
     <div class="rv">
-      <h2>A broker that finds the way through</h2>
+      <h2 data-i18n="about_h">A broker that finds the way through</h2>
       <p class="lead">OCM Customs Brokerage OPC is a duly licensed customs brokerage approved by the Securities and Exchange Commission. Meeting or exceeding what our clients expect always comes first.</p>
       <ul class="checks">
         <li>We make sure your logistics plan works out as intended.</li>
         <li>We look for creative solutions to logistical issues, and we raise them early.</li>
         <li>Licensed customs brokers lead every clearance.</li>
       </ul>
-      <p style="margin-top:28px"><a class="btn btn-dark" href="company.html">Read our company profile</a></p>
+      <p style="margin-top:28px"><a class="btn btn-dark" href="company.html" data-i18n="about_btn">Read our company profile</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="ind" id="industries">
+  <div class="wrap">
+    <div class="rv"><h2 data-i18n="ind_h">Industries we serve</h2></div>
+    <ul class="chips rv"><!-- Edit this list to match your real clients -->
+      <li>Food and beverage</li><li>Machinery and equipment</li><li>Electronics</li><li>Garments and textiles</li><li>Construction materials</li><li>Medical and pharmaceutical supplies</li><li>Automotive parts</li><li>Retail and consumer goods</li>
+    </ul>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="wrap">
+    <div class="rv"><h2 data-i18n="chk_h">What documents do I need?</h2><p class="lead" data-i18n="chk_p">Choose your shipment type to get a general checklist you can print or email to yourself.</p></div>
+    <div class="chk rv">
+      <div class="chk-ctl">
+        <div><span class="lbl" id="l1">Shipment type</span><div class="seg" role="radiogroup" aria-labelledby="l1"><label><input type="radio" name="cd" value="Import" checked><span>Import</span></label><label><input type="radio" name="cd" value="Export"><span>Export</span></label></div></div>
+        <div><span class="lbl" id="l2">Freight</span><div class="seg" role="radiogroup" aria-labelledby="l2"><label><input type="radio" name="cm" value="Sea" checked><span>Sea</span></label><label><input type="radio" name="cm" value="Air"><span>Air</span></label></div></div>
+        <label class="check"><input type="checkbox" id="cperm"><span>My cargo is regulated (food, medicines, chemicals, plants or animals)</span></label>
+      </div>
+      <div class="chk-out" id="chkout" aria-live="polite"></div>
     </div>
   </div>
 </section>
@@ -255,8 +342,8 @@ footer a{color:#fff}
 <section class="quote" id="quote">
   <div class="wrap grid">
     <div class="rv">
-      <h2>Tell us about your shipment</h2>
-      <p class="lead">Share a few details and we will reply with a quotation within 24 hours.</p>
+      <h2 data-i18n="quote_h">Tell us about your shipment</h2>
+      <p class="lead" data-i18n="quote_p">Share a few details and we will reply with a quotation within 24 hours.</p>
       <ul>
         <li>✔ Reply within 24 hours</li>
         <li>✔ Import and export, air and sea</li>
@@ -264,6 +351,10 @@ footer a{color:#fff}
       </ul>
     </div>
     <form id="qf" class="rv">
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="New quote request from the website">
+      <input type="hidden" name="from_name" value="OCM Website">
+      <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
       <label>Full name<input name="name" required autocomplete="name"></label>
       <label>Company<input name="company" autocomplete="organization"></label>
       <label>Email<input type="email" name="email" required autocomplete="email"></label>
@@ -281,17 +372,48 @@ footer a{color:#fff}
       <label class="full">Shipment details
         <textarea name="details" placeholder="Cargo type, origin and destination, expected arrival date"></textarea>
       </label>
-      <div class="full"><button class="btn btn-dark" type="submit" style="width:100%;justify-content:center">Send request</button>
-      <p class="note" style="margin-top:10px">This opens your email app with the details filled in, addressed to our team.</p></div>
+      <label class="full check"><input type="checkbox" name="consent" required><span>I agree that OCM Customs Brokerage may use these details to reply to my request, in line with the Data Privacy Act of 2012 (RA 10173).</span></label>
+      <div class="full"><button class="btn btn-dark" type="submit" style="width:100%;justify-content:center" data-i18n="send">Send request</button>
+      <p class="note" style="margin-top:10px">We reply within 24 hours.</p></div>
     </form>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="rv"><h2 data-i18n="faq_h">Frequently asked questions</h2></div>
+    <div class="faq rv"><!-- Please review these answers so they match how OCM works -->
+      <details><summary>How long does customs clearance take?</summary><p>It depends on how complete your documents are, how the Bureau of Customs assesses the shipment, and whether it is selected for examination. Complete, correct documents make the biggest difference, so we check them before filing. Send us your shipment details and we will give you a realistic estimate.</p></details>
+      <details><summary>What do I need for AMO-BOC accreditation?</summary><p>The Account Management Office (AMO) of the Bureau of Customs accredits importers and exporters. Requirements are updated from time to time, so we confirm the current list for your type of business, then prepare and process the application for you.</p></details>
+      <details><summary>What happens if my cargo is selected for examination?</summary><p>The Bureau of Customs may ask for a physical inspection of your cargo. Our team coordinates the examination, keeps you updated and follows up on the result so the shipment can move toward release.</p></details>
+      <details><summary>Who pays the duties and taxes?</summary><p>The importer pays, based on the assessed value and the tariff classification of the goods. We confirm the amounts with you before payment so there are no surprises.</p></details>
+      <details><summary>Does my cargo need a permit?</summary><p>Regulated goods such as food, medicines and chemicals may need permits from other government agencies before customs can release them. Tell us what you are shipping and we will advise what applies.</p></details>
+      <details><summary>How do I get a quotation?</summary><p>Fill in the quote form on this page or message us on Viber or WhatsApp. We reply within 24 hours.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="gloss" id="glossary">
+  <div class="wrap">
+    <div class="rv"><h2 data-i18n="gl_h">Terms worth knowing</h2></div>
+    <div class="gl rv">
+      <div><b>AWB</b><span>Air waybill</span><p>The transport document for air cargo, issued by the airline or forwarder.</p></div>
+      <div><b>B/L</b><span>Bill of lading</span><p>The transport document for sea cargo, issued by the shipping line. It proves ownership of the goods.</p></div>
+      <div><b>BOC</b><span>Bureau of Customs</span><p>The government agency that assesses duties and taxes and releases imported cargo.</p></div>
+      <div><b>AMO</b><span>Account Management Office</span><p>The BOC office that handles accreditation of importers, exporters and brokers.</p></div>
+      <div><b>Breakbulk</b><span>Non-containerised cargo</span><p>Loose or oversized goods shipped individually rather than inside a container.</p></div>
+      <div><b>Customs declarant</b><span>Declaration preparer</span><p>The person who prepares and files the customs declaration for your shipment.</p></div>
+      <div><b>Commercial invoice</b><span>Seller's bill</span><p>Lists the goods, quantities and prices. Customs uses it to assess duties and taxes.</p></div>
+      <div><b>Demurrage</b><span>Container storage charge</span><p>A fee from the shipping line when a container stays at the port past the free time.</p></div>
+    </div>
   </div>
 </section>
 
 <section id="team">
   <div class="wrap">
     <div class="rv">
-      <h2>The people behind your clearance</h2>
-      <p class="lead">A team of brokers, declarants, documentation and liaison officers working on your cargo.</p>
+      <h2 data-i18n="team_h">The people behind your clearance</h2>
+      <p class="lead" data-i18n="team_p">A team of brokers, declarants, documentation and liaison officers working on your cargo.</p>
     </div>
     <div class="team-grid rv" id="teamgrid"></div>
   </div>
@@ -300,15 +422,18 @@ footer a{color:#fff}
 <section class="contact" id="contact">
   <div class="wrap">
     <div class="rv">
-      <h2>Talk to us</h2>
-      <p class="lead">Call, email or visit our office in Parañaque City.</p>
+      <h2 data-i18n="contact_h">Talk to us</h2>
+      <p class="lead" data-i18n="contact_p">Call, email or visit our office in Parañaque City.</p>
     </div>
     <div class="cards rv">
       <a class="card" href="https://maps.google.com/?q=Olivarez+Condominium+Juanita+De+Leon+St+San+Dionisio+Paranaque" target="_blank" rel="noopener"><div class="ic">📍</div><h3>Office</h3><p>12-14 2/F Bldg 1, Olivarez Condominium, Juanita De Leon St., Brgy. San Dionisio, Parañaque City 1700</p></a>
       <a class="card" href="mailto:ocmcustomsbrokerage0722@gmail.com"><div class="ic">✉️</div><h3>Email</h3><p>ocmcustomsbrokerage0722@gmail.com</p></a>
       <a class="card" href="tel:+63284708450"><div class="ic">☎️</div><h3>Telephone</h3><p>(632) 8 470 8450</p></a>
       <a class="card" href="tel:+639692378264"><div class="ic">📱</div><h3>Mobile</h3><p>+63 969 237 8264</p></a>
+      <a class="card" href="viber://chat?number=%2B639692378264" data-t="Viber click"><div class="ic">💬</div><h3>Viber</h3><p>Message us on Viber</p></a>
+      <a class="card" href="https://wa.me/639692378264" target="_blank" rel="noopener" data-t="WhatsApp click"><div class="ic">🟢</div><h3>WhatsApp</h3><p>Message us on WhatsApp</p></a>
     </div>
+  <div class="map rv"><iframe title="Map of OCM Customs Brokerage office" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Olivarez+Condominium,+Juanita+De+Leon+St,+San+Dionisio,+Para%C3%B1aque&output=embed"></iframe></div>
   </div>
 </section>
 </main>
@@ -316,17 +441,19 @@ footer a{color:#fff}
 <footer>
   <div class="wrap">
     <span>© <span id="yr">2026</span> OCM Customs Brokerage OPC. All rights reserved.</span>
-    <a href="#top">Back to top</a>
+    <span><a href="advisories.html">Customs advisories</a><a href="company.html">Company profile</a><a href="#top">Back to top</a></span>
   </div>
 </footer>
 
 <div class="float">
   <a class="top" id="top-btn" href="#top" aria-label="Back to top">↑</a>
-  <a href="tel:+639692378264" aria-label="Call OCM Customs Brokerage">📞</a>
+  <a class="chat vb" href="viber://chat?number=%2B639692378264" data-t="Viber click" aria-label="Chat on Viber">Viber</a>
+  <a class="chat wa" href="https://wa.me/639692378264" target="_blank" rel="noopener" data-t="WhatsApp click" aria-label="Chat on WhatsApp">WhatsApp</a>
+  <a href="tel:+639692378264" data-t="Call click" aria-label="Call OCM Customs Brokerage">📞</a>
 </div>
 
 <div class="toast" id="toast" role="dialog" aria-modal="true" aria-labelledby="tt">
-  <div><h3 id="tt">Almost done</h3><p>Your email app should open with your request ready to send. If it doesn’t, email us at ocmcustomsbrokerage0722@gmail.com.</p><button class="btn btn-dark" id="tok">Got it</button></div>
+  <div><h3 id="tt">Almost done</h3><p id="tmsg"></p><button class="btn btn-dark" id="tok">Got it</button></div>
 </div>
 
 <script>
@@ -385,7 +512,7 @@ services.forEach((s,i)=>{
  sel.add(new Option(s.t,s.t));
 });
 sel.add(new Option('Not sure yet','Not sure yet'));
-function show(n){services.forEach((_,i)=>{$('#t'+i).setAttribute('aria-selected',i===n);$('#p'+i).hidden=i!==n})}
+function show(n){track('Service view',{service:services[n].t});services.forEach((_,i)=>{$('#t'+i).setAttribute('aria-selected',i===n);$('#p'+i).hidden=i!==n})}
 panels.addEventListener('click',e=>{const a=e.target.closest('[data-svc]');if(a)sel.selectedIndex=+a.dataset.svc});
 
 // team
@@ -393,13 +520,66 @@ const grid=$('#teamgrid');
 team.forEach(m=>{const ini=m[0].replace(/[^A-Za-z ]/g,'').split(' ').filter(Boolean);const d=document.createElement('div');d.className='person'+(m[3]?' lead-p':'');
  d.innerHTML=`<div class="av">${ini[0][0]}${ini[ini.length-1][0]}</div><h3>${m[0]}</h3><div class="role">${m[1]}</div>${m[2]?`<span class="tag">${m[2]}</span>`:''}`;grid.appendChild(d)});
 
-// form -> mailto
-$('#qf').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);
- const body=`Name: ${f.get('name')}\nCompany: ${f.get('company')||'-'}\nEmail: ${f.get('email')}\nPhone: ${f.get('phone')||'-'}\nShipment type: ${f.get('dir')}\nService: ${f.get('service')}\n\nDetails:\n${f.get('details')||'-'}`;
- location.href=`mailto:ocmcustomsbrokerage0722@gmail.com?subject=${encodeURIComponent('Quote request: '+f.get('dir')+' - '+f.get('service'))}&body=${encodeURIComponent(body)}`;
- $('#toast').classList.add('show');$('#tok').focus()});
+const track=(n,p)=>{try{plausible(n,p?{props:p}:undefined)}catch(e){}};
+document.addEventListener('click',e=>{const a=e.target.closest('[data-t]');if(a)track(a.dataset.t)});
+function toast(h,p){$('#tt').textContent=h;$('#tmsg').textContent=p;$('#toast').classList.add('show');$('#tok').focus()}
+
+// form: Web3Forms (falls back to email until the access key is added)
+const qf=$('#qf');
+qf.addEventListener('submit',async e=>{e.preventDefault();const f=new FormData(qf),b=qf.querySelector('button[type=submit]'),lab=b.textContent;
+ track('Quote request',{service:f.get('service')});
+ if(f.get('access_key')==='YOUR_WEB3FORMS_ACCESS_KEY'){
+  const body=`Name: ${f.get('name')}\nCompany: ${f.get('company')||'-'}\nEmail: ${f.get('email')}\nPhone: ${f.get('phone')||'-'}\nShipment type: ${f.get('dir')}\nService: ${f.get('service')}\n\nDetails:\n${f.get('details')||'-'}`;
+  location.href=`mailto:ocmcustomsbrokerage0722@gmail.com?subject=${encodeURIComponent('Quote request: '+f.get('dir')+' - '+f.get('service'))}&body=${encodeURIComponent(body)}`;
+  toast('Almost done','Your email app should open with your request ready to send.');return}
+ b.disabled=true;b.textContent='Sending...';
+ try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(f))});
+  if(!(await r.json()).success)throw 0;qf.reset();toast('Request sent','Thank you for contacting OCM Customs Brokerage. We will get back to you within 24 hours.')}
+ catch(x){toast('Could not send','Please try again, or call (632) 8 470 8450 or email ocmcustomsbrokerage0722@gmail.com.')}
+ b.disabled=false;b.textContent=lab});
 $('#tok').onclick=()=>$('#toast').classList.remove('show');
 addEventListener('keydown',e=>{if(e.key==='Escape')$('#toast').classList.remove('show')});
+
+// theme
+const root=document.documentElement;
+function setTheme(t,save){root.dataset.theme=t;$('#themebtn').textContent=t==='dark'?'☀️':'🌙';if(save)try{localStorage.setItem('ocm-theme',t)}catch(e){}}
+setTheme(root.dataset.theme||'light');
+$('#themebtn').onclick=()=>{const t=root.dataset.theme==='dark'?'light':'dark';setTheme(t,1);track('Theme',{mode:t})};
+
+// language (English / Filipino)
+const tl={nav_services:'Mga Serbisyo',nav_about:'Tungkol sa Amin',nav_docs:'Mga Dokumento',nav_faq:'FAQ',nav_team:'Koponan',nav_contact:'Kontak',req:'Humingi ng quote',
+hero_badge:'Lisensyadong customs brokerage · Lungsod ng Parañaque',hero_h:'Ang iyong kargamento, maayos na na-clear.',
+hero_p:'Kami ang bahala sa mga papeles, sa proseso sa Bureau of Customs, at sa pag-follow up, para dumiretso ang kargamento mo mula pantalan hanggang pintuan mo nang walang sorpresa.',
+hero_cta2:'Tingnan ang mga serbisyo',svc_h:'Ano ang inaasikaso namin para sa iyo',svc_p:'Pumili ng serbisyo para makita kung paano kami makatutulong sa iyong kargamento.',
+about_h:'Brokerong humahanap ng paraan',about_btn:'Basahin ang profile ng kumpanya',ind_h:'Mga industriyang aming pinaglilingkuran',
+chk_h:'Anong mga dokumento ang kailangan ko?',chk_p:'Piliin ang uri ng iyong kargamento para makuha ang pangkalahatang checklist na maaari mong i-print o i-email sa sarili.',
+quote_h:'Ikuwento ang iyong kargamento',quote_p:'Ibahagi ang ilang detalye at sasagot kami ng quotation sa loob ng 24 oras.',send:'Ipadala ang request',
+faq_h:'Mga madalas itanong',gl_h:'Mga terminong dapat malaman',team_h:'Ang mga taong nasa likod ng iyong clearance',
+team_p:'Koponan ng mga broker, declarant, at documentation at liaison officer na nag-aasikaso sa iyong kargamento.',contact_h:'Kausapin kami',contact_p:'Tumawag, mag-email, o bumisita sa aming opisina sa Lungsod ng Parañaque.'};
+function setLang(l,save){document.documentElement.lang=l==='tl'?'fil':'en';
+ document.querySelectorAll('[data-i18n]').forEach(el=>{if(!el.dataset.en)el.dataset.en=el.textContent;el.textContent=l==='tl'?(tl[el.dataset.i18n]||el.dataset.en):el.dataset.en});
+ $('#langbtn').textContent=l==='tl'?'EN':'TL';$('#langbtn').dataset.l=l;if(save)try{localStorage.setItem('ocm-lang',l)}catch(e){}}
+$('#langbtn').onclick=()=>{const l=$('#langbtn').dataset.l==='tl'?'en':'tl';setLang(l,1);track('Language',{lang:l})};
+try{setLang(localStorage.getItem('ocm-lang')||'en')}catch(e){setLang('en')}
+
+// document checklist
+const perm=['Permits or clearances for regulated goods','Issued by the agency that regulates your product, for example FDA for food and medicines. We confirm which apply.'];
+const inv=['Commercial invoice','From the seller, showing the goods, quantities and values.'],pl=['Packing list','Itemised contents with weights and package counts.'],auth=['Authorization for the broker','A letter or SPA that lets us act on your behalf.'],coo=['Certificate of origin (if applicable)','Only if a trade agreement gives you preferential duty, or your buyer requires it.'];
+const D={Import:{base:[inv,pl,['BOC accreditation and TIN','Needed to file an import entry. We can process the accreditation for you.'],auth],Sea:[['Bill of lading (B/L)','Issued by the shipping line.'],['Delivery order','Obtained from the shipping line.']],Air:[['Air waybill (AWB)','Issued by the airline or forwarder.'],['Release documents','From the airline or cargo handler.']],extra:[coo]},
+Export:{base:[inv,pl,['Exporter registration and TIN','SEC or DTI registration, depending on your business.'],auth],Sea:[['Booking confirmation','From the shipping line or forwarder.'],['Draft bill of lading','Checked before the final B/L is issued.']],Air:[['Air waybill (AWB) or booking confirmation','From the airline or forwarder.']],extra:[coo]}};
+const chkout=$('#chkout'),val=n=>document.querySelector(`input[name=${n}]:checked`).value;
+let list=[],cur='';
+function renderChk(){const d=val('cd'),m=val('cm'),c=D[d];list=[...c.base,...c[m],...($('#cperm').checked?[perm]:[]),...c.extra];cur=`${d}, ${m==='Sea'?'sea':'air'} freight`;
+ chkout.innerHTML=`<h3>${cur} checklist</h3><ul class="items">${list.map(x=>`<li><label><input type="checkbox"><span><b>${x[0]}</b><small>${x[1]}</small></span></label></li>`).join('')}</ul><p class="note">This is a general list. Exact requirements depend on your cargo, so we confirm everything with you before filing.</p><div class="cta-row" style="margin-top:16px"><button class="btn btn-dark" id="cprint" type="button">Print</button><button class="btn btn-dark" id="cmail" type="button">Email to myself</button><a class="btn btn-primary" id="cask" href="#quote">Ask us about this shipment</a></div>`}
+document.querySelectorAll('input[name=cd],input[name=cm],#cperm').forEach(i=>i.onchange=()=>{renderChk();track('Checklist',{type:cur})});
+renderChk();
+chkout.addEventListener('click',e=>{const id=e.target.id;
+ if(id==='cprint'){track('Checklist print');print()}
+ if(id==='cmail'){track('Checklist email');location.href=`mailto:?subject=${encodeURIComponent('Document checklist: '+cur)}&body=${encodeURIComponent('Document checklist ('+cur+')\nOCM Customs Brokerage, (632) 8 470 8450\n\n'+list.map(x=>'[ ] '+x[0]+(x[1]?' - '+x[1]:'')).join('\n'))}`}
+ if(id==='cask'){document.querySelector(`input[name=dir][value=${val('cd')}]`).checked=true;const t=qf.elements.details;if(!t.value)t.value='Shipment: '+cur}});
+
+// FAQ structured data
+document.head.appendChild(Object.assign(document.createElement('script'),{type:'application/ld+json',text:JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:[...document.querySelectorAll('#faq details')].map(d=>({'@type':'Question',name:d.querySelector('summary').textContent,acceptedAnswer:{'@type':'Answer',text:d.querySelector('p').textContent}}))})}));
 
 // reveal
 const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
