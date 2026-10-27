@@ -530,7 +530,7 @@ qf.addEventListener('submit',async e=>{e.preventDefault();const f=new FormData(q
  track('Quote request',{service:f.get('service')});
  if(!f.get('access_key')||f.get('access_key').startsWith('YOUR_')){
   const body=`Name: ${f.get('name')}\nCompany: ${f.get('company')||'-'}\nEmail: ${f.get('email')}\nPhone: ${f.get('phone')||'-'}\nShipment type: ${f.get('dir')}\nService: ${f.get('service')}\n\nDetails:\n${f.get('details')||'-'}`;
-  location.href=`mailto:johnlagman12334@gmail.com?subject=${encodeURIComponent('Quote request: '+f.get('dir')+' - '+f.get('service'))}&body=${encodeURIComponent(body)}`;
+  location.href=`mailto:ocmcustomsbrokerage0722@gmail.com?subject=${encodeURIComponent('Quote request: '+f.get('dir')+' - '+f.get('service'))}&body=${encodeURIComponent(body)}`;
   toast('Almost done','Your email app should open with your request ready to send.');return}
  b.disabled=true;b.textContent='Sending...';
  try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(Object.fromEntries(f))});
